@@ -1,27 +1,18 @@
-import styled from 'styled-components';
-import Body from './Body/Body';
-import { Footer } from './Footer/Footer';
-import Hearder from './Header/Header';
+import { BrowserRouter } from 'react-router-dom';
+import MainRouters from './Router/Routes';
 
 
 
 function App() {
   return (
-    <Container>
-
-      <Hearder />
-      <Body />
-      <Footer />
-
-    </Container>
+    <BrowserRouter>
+  
+      <MainRouters />
+      
+    </BrowserRouter>
   );
 }
 
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-`
 
 export default App;
 
