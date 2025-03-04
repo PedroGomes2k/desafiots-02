@@ -1,15 +1,17 @@
-import {  createContext, useState } from "react";
+import { createContext, useState } from "react";
+import { IContext } from "../Services/Interfaces";
 
-const Context = createContext({})
 
+export const AuthContext = createContext({} as IContext)
 
-export default function ContextProvider({children}:any) {
+export default function ContextProvider({ children }:any) {
 
-    const [token, setToken] = useState<any>("")
+    const [isLogged, setIsLogged] = useState(false)
+    const [userInfo, setUserInfo] = useState(false)
 
-    return(
-        <Context.Provider value={{token, setToken}}>
+    return (
+        <AuthContext.Provider value={{ isLogged, setIsLogged,userInfo,setUserInfo }}>
             {children}
-        </Context.Provider>
+        </AuthContext.Provider>
     )
 }

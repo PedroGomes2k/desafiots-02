@@ -19,7 +19,8 @@ export const Footer  = () => {
     align-items: center;
 
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: 900;
+    font-weight: 1000;
+    color: #FFFFFF;
     box-shadow: 18px 6px 18px 6px #0000003d;
 
     position: fixed;

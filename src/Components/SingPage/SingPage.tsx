@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import SingIn from './SingIn';
+import SingIn from './SingIn/SingIn';
 import Hearder from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
 
-function Body() {
+function SingPage() {
+
 
   return (
     <ContainerBody>
@@ -14,12 +15,10 @@ function Body() {
       </Provider>
       <Footer />
     </ContainerBody>
-
-
   );
 }
 
-export default Body;
+export default SingPage;
 
 const ContainerBody = styled.div`
   display: flex;
@@ -28,12 +27,10 @@ const ContainerBody = styled.div`
 `
 
 const Provider = styled.div`
-  background-color: #c9c2bb5c  ;
+  background-color:  #faebd72f  ;
   height: 100vh;
 
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
+  padding: 60px;
   margin-top: 20px;
 
 `
