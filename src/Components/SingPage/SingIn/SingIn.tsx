@@ -6,13 +6,13 @@ import { AuthContext } from "../../../Context/Context"
 
 function SingIn() {
 
-  const { setIsLogged } = useContext(AuthContext)
+  const { setIsLogged, setUserInfo } = useContext(AuthContext)
   const [form, setForm] = useState<Form>({ email: "", password: "" })
   const navigate = useNavigate()
 
   useEffect(() => {
     setIsLogged(false)
-
+    setUserInfo(false)
   }, [])
 
   function loginForms(e: any) {
@@ -50,7 +50,7 @@ function SingIn() {
           <button type="submit"> Entrar </button>
 
         </form>
-        
+
       </Box>
     </Box>
   )

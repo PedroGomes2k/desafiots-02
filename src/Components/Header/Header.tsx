@@ -2,21 +2,24 @@ import { useContext } from "react"
 import styled from "styled-components"
 import { AuthContext } from "../../Context/Context"
 import { useNavigate } from "react-router-dom"
+import home from "../../assets/home.png"
+import logout from "../../assets/logout.png"
+import person from "../../assets/person.png"
 
 
 export default function Hearder() {
 
-    const { isLogged, setIsLogged, setUserInfo, userInfo } = useContext(AuthContext)
+    const { isLogged, setIsLogged, setUserInfo } = useContext(AuthContext)
     const navigate = useNavigate()
 
-    function logOut() {
+    function logOutPage() {
         setIsLogged(false)
         navigate('/')
     }
     function userInfos() {
-     setUserInfo(true) 
+        setUserInfo(true)
     }
-    function backHome(){
+    function backHome() {
         setUserInfo(false)
     }
 
@@ -29,10 +32,10 @@ export default function Hearder() {
                 (
                     <div className="logIn">
                         <p className="title">Diobank</p>
-                        <div >  
-                            <button onClick={() => backHome()}><ion-icon name="home" /></button>
-                            <button onClick={() => userInfos()}><ion-icon name="person" /></button>
-                            <button onClick={() => logOut()}><ion-icon name="log-out" /></button>
+                        <div >
+                            <button onClick={() => backHome()}><img src={home} /></button>
+                            <button onClick={() => userInfos()}><img src={person} /> </button>
+                            <button onClick={() => logOutPage()}> <img src={logout} /></button>
                         </div>
                     </div>
                 )
@@ -65,13 +68,15 @@ const Provider = styled.div`
         display: flex;
         justify-content: space-between;
 
-        ion-icon{
+        img{
         color: white;
         margin-right: 30px;
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
         cursor:pointer
+
         }
+        
 
         .title{
         padding-left: 80px;
@@ -82,9 +87,6 @@ const Provider = styled.div`
             border: hidden;
         }
 
-        .user{
-            
-        }
     }
 
     p{
